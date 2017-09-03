@@ -1,21 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
 
-.item-1 {
-    background-color: aquamarine;
+/*.item-1 {*/
+    /*background-color: aquamarine;*/
+/*}*/
+
+/*.item-2 {*/
+/*background-color: aqua;*/
+/*}*/
+
+/*.item-3 {*/
+/*background-color: coral;*/
+/*}*/
+
+/*.item-4 {*/
+/*background-color: crimson;*/
+/*}*/
+
+/*.item-5 {*/
+/*background-color: darkcyan;*/
+/*}*/
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
-.item-2 {
-    background-color: aqua;
-}
-
-.item-3 {
-    background-color: coral;
-}
-
-.item-4 {
+header {
+    grid-area: header;
     background-color: crimson;
+    min-height: 40px;
+}
+.main {
+    grid-area: main;
+    background-color: darkcyan;
+    height: calc(100vh - 190px);
 }
 
-.item-5 {
-    background-color: darkcyan;
+footer {
+    grid-area: footer;
+    background-color: darkgray;
+    min-height: 150px;
+}
+
+.container {
+    display: grid;
+
+    /* Определяем размер и число колонок нашей сетки.
+       Единица fr работает подобно Flexbox:
+       колонки делят свободное пространство в строке согласно их значениям.
+       У нас будет две колонки — первая в три раза больше второй. */
+    grid-template-columns: 3fr 1fr;
+
+    /* Связываем сделанные ранее области с местами в сетке.
+       Первая строка — шапка.
+       Вторая строка делится между основным разделом и боковой панелью.
+       Последняя строка — подвал. */
+    grid-template-areas:
+            "header header"
+            "main sidebar"
+            "footer footer";
+
+    /* Интервал между ячейками сетки будет 60 пикселей */
+    grid-gap: 60px;
 }

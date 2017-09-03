@@ -1,25 +1,23 @@
-import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
+import {appRouting} from "./app-routing.module";
 import {AppComponent} from "./app.component";
-import {FlexLayoutModule} from "@angular/flex-layout";
-import {LayoutComponent} from "./layout/layout.component";
-import {NavbarComponent} from "./navbar/navbar.component";
-import {FooterComponent} from "./footer/footer.component";
-import {appRouting} from "./app.routing";
+import {BrowserModule} from "@angular/platform-browser";
+import {AuthModule} from "./auth/auth.module";
+import {CustomerModule} from "./customer/customer.module";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        LayoutComponent,
-        NavbarComponent,
-        FooterComponent
-    ],
     imports: [
+        CommonModule,
         BrowserModule,
-        FlexLayoutModule,
+        AuthModule,
+        CustomerModule,
         appRouting
     ],
-    providers: [],
+    declarations: [
+        AppComponent
+    ],
+    //providers: [AuthGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule {
